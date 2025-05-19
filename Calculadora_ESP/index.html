@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Preço de Espada</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>🗡️ Calculadora de Espadas</h1>
+
+    <label>Rank desejado:</label>
+    <select id="rankDestino">
+      <option value="D">D</option>
+      <option value="C">C</option>
+      <option value="B">B</option>
+      <option value="A">A</option>
+      <option value="S">S</option>
+      <option value="SS" selected>SS</option>
+    </select>
+
+    <label
+      >Preço de cada espada E (com sufixo, ex: 10, 10T, 10Qa, 15.5Sx):</label
+    >
+    <input type="text" id="precoE" placeholder="Ex: 10, 10T, 10Qa, 15.5Sx" />
+
+    <h3>Quantas espadas você já tem:</h3>
+    <label>E:</label><input type="number" id="E" value="0" min="0" />
+    <label>D:</label><input type="number" id="D" value="0" min="0" />
+    <label>C:</label><input type="number" id="C" value="0" min="0" />
+    <label>B:</label><input type="number" id="B" value="0" min="0" />
+    <label>A:</label><input type="number" id="A" value="0" min="0" />
+    <label>S:</label><input type="number" id="S" value="0" min="0" />
+    <label>SS:</label><input type="number" id="SS" value="0" min="0" />
+
+    <button onclick="calcular()">Calcular</button>
+
+    <h2>Resultado:</h2>
+    <div id="resultado"></div>
+
+    <script src="javascript/script.js"></script>
+
+    <h2>Espadas da Ilha da Cidade de Nível</h2>
+    <table class="tabela-espadas">
+      <thead>
+        <tr>
+          <th>Nome da Espada</th>
+          <th>Valor</th>
+          <th>Raridade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Spiked Maul</td>
+          <td>80</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Jeweled Rod</td>
+          <td>180</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Twin Kando Blades</td>
+          <td>400</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Prism Scepter</td>
+          <td>900</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Twin Bone Crushers</td>
+          <td>2 K</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Twin Iron Naginatas</td>
+          <td>4.5 K</td>
+          <td>Comum</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Espadas da Ilha da Vila da Grama</h2>
+    <table class="tabela-espadas">
+      <thead>
+        <tr>
+          <th>Nome da Espada</th>
+          <th>Valor</th>
+          <th>Raridade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Beast Bane</td>
+          <td>10 K</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Twin Simple Wands</td>
+          <td>22 K</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Corsair Blade</td>
+          <td>49 K</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Hybrid War Axe</td>
+          <td>110 K</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Bronze War Axe</td>
+          <td>242 K</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Twin Relic Meces</td>
+          <td>535 K</td>
+          <td>Comum</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Espadas da Ilha de Brum</h2>
+    <table class="tabela-espadas">
+      <thead>
+        <tr>
+          <th>Nome da Espada</th>
+          <th>Valor</th>
+          <th>Raridade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Espada do Vento</td>
+          <td>8 M</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Espada Tempestuosa</td>
+          <td>120 B</td>
+          <td>Rara</td>
+        </tr>
+        <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Espadas da Ilha da Cidade de Faceheal</h2>
+    <table class="tabela-espadas">
+      <thead>
+        <tr>
+          <th>Nome da Espada</th>
+          <th>Valor</th>
+          <th>Raridade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Espada do Vento</td>
+          <td>8 M</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Espada Tempestuosa</td>
+          <td>120 B</td>
+          <td>Rara</td>
+        </tr>
+        <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Espadas da Ilha do Reino Afortunado</h2>
+    <table class="tabela-espadas">
+      <thead>
+        <tr>
+          <th>Nome da Espada</th>
+          <th>Valor</th>
+          <th>Raridade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Espada do Vento</td>
+          <td>8 M</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Espada Tempestuosa</td>
+          <td>120 B</td>
+          <td>Rara</td>
+        </tr>
+        <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Espadas da Ilha da Cidade Nipon</h2>
+    <table class="tabela-espadas">
+      <thead>
+        <tr>
+          <th>Nome da Espada</th>
+          <th>Valor</th>
+          <th>Raridade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Espada do Vento</td>
+          <td>8 M</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Espada Tempestuosa</td>
+          <td>120 B</td>
+          <td>Rara</td>
+        </tr>
+        <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Espadas da Ilha da Cidade Mori</h2>
+    <table class="tabela-espadas">
+      <thead>
+        <tr>
+          <th>Nome da Espada</th>
+          <th>Valor</th>
+          <th>Raridade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Espada do Vento</td>
+          <td>8 M</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Espada Tempestuosa</td>
+          <td>120 B</td>
+          <td>Rara</td>
+        </tr>
+        <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Espadas da Ilha da Cidade do Dragão</h2>
+    <table class="tabela-espadas">
+      <thead>
+        <tr>
+          <th>Nome da Espada</th>
+          <th>Valor</th>
+          <th>Raridade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Espada do Vento</td>
+          <td>8 M</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Espada Tempestuosa</td>
+          <td>120 B</td>
+          <td>Rara</td>
+        </tr>
+        <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Espadas da Ilha da Cidade XZ</h2>
+    <table class="tabela-espadas">
+      <thead>
+        <tr>
+          <th>Nome da Espada</th>
+          <th>Valor</th>
+          <th>Raridade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Espada do Vento</td>
+          <td>8 M</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Espada Tempestuosa</td>
+          <td>120 B</td>
+          <td>Rara</td>
+        </tr>
+        <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Espadas da Ilha da Cidade Kindama</h2>
+    <table class="tabela-espadas">
+      <thead>
+        <tr>
+          <th>Nome da Espada</th>
+          <th>Valor</th>
+          <th>Raridade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Espada do Vento</td>
+          <td>8 M</td>
+          <td>Comum</td>
+        </tr>
+        <tr>
+          <td>Espada Tempestuosa</td>
+          <td>120 B</td>
+          <td>Rara</td>
+        </tr>
+        <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Espadas da Ilha da Cidade dos Caçadores</h2>
+    <table class="tabela-espadas">
+      <thead>
+        <tr>
+          <th>Nome da Espada</th>
+          <th>Valor</th>
+          <th>Raridade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Espada do Vento</td>
+          <td>8 M</td>
+          <td>Comum</td>
+        </tr>
+        <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada de Brasa</td>
+          <td>30 B</td>
+          <td>Épica</td>
+        </tr>
+        <tr>
+          <td>Espada Tempestuosa</td>
+          <td>120 B</td>
+          <td>Rara</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </body>
+</html>

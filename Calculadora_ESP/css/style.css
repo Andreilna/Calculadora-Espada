@@ -1,0 +1,172 @@
+/* Reset básico para margens e paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #e0e6f1;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  user-select: none;
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 0 2px 6px #091f34;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin: 15px 0 6px;
+  font-size: 1.1rem;
+  color: #cfd8fc;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: #1e2a38;
+  color: #f0f4ff;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 500;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  background: #283c54;
+  box-shadow: 0 0 8px 2px #6ca0ff;
+  color: #dbe8ff;
+}
+
+button {
+  margin-top: 25px;
+  padding: 14px;
+  width: 100%;
+  background: #4a90e2;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(74, 144, 226, 0.7);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+button:hover {
+  background: #357abd;
+  box-shadow: 0 8px 16px rgba(53, 122, 189, 0.9);
+}
+
+button:active {
+  background: #2a5a8a;
+  box-shadow: 0 4px 8px rgba(42, 90, 138, 0.7);
+}
+
+h2 {
+  margin-top: 35px;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #a0b8ff;
+  text-shadow: 0 1px 3px #091f34;
+}
+
+#resultado {
+  background: #182538;
+  padding: 20px 25px;
+  border-radius: 12px;
+  margin-top: 18px;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  box-shadow: inset 0 0 10px #3a5068;
+  color: #cdd9f4;
+}
+
+#resultado p {
+  margin-bottom: 10px;
+}
+
+#resultado b {
+  color: #ffd166;
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+  }
+}
+
+.tabela-espadas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  margin-bottom: 35px;
+  font-size: 1rem;
+  color: #e0e6f1;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tabela-espadas thead {
+  background: #4a90e2;
+  color: #fff;
+  text-align: left;
+}
+
+.tabela-espadas th, .tabela-espadas td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #2c5364;
+}
+
+.tabela-espadas tbody tr:hover {
+  background: #283c54;
+  cursor: pointer;
+}
+
+h2 {
+  margin-top: 30px;
+  color: #a0b8ff;
+  text-shadow: 0 1px 3px #091f34;
+}
+
+@media (max-width: 480px) {
+  .tabela-espadas {
+    font-size: 0.85rem;
+  }
+
+  .tabela-espadas th, .tabela-espadas td {
+    padding: 10px 12px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+}
